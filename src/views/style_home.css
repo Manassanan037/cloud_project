@@ -1,0 +1,383 @@
+.banner {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("/wall_price.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    /*ไม่ให้แสดงทับที่อื่น*/
+    background-position: center 40%;
+    /*ขยับภาพให้อยู่กลางและขยับไป 40% */
+    color: aliceblue;
+    height: 600px;
+    /* กำหนดความสูง */
+    width: 600;
+    display: flex;
+    justify-content: center;
+    /* จัดเป็นแนวนอน X */
+    align-content: center;
+    /* จัดเป็นแนวตั้ง Y */
+    padding: 30px;
+    /* กำหนดไม่ให้ชิดกับขอบบนมาก */
+    letter-spacing: 2px;
+    /*เพิ่มระยะห่างอักษร */
+
+
+}
+
+.banner-info {
+    text-align: center;
+
+}
+
+.banner h1 {
+    font-size: 100px;
+    /* padding: 10px; */
+    margin-top: 150px;
+}
+
+.banner-info p {
+    font-size: 90px;
+    margin-top: -50px;
+    
+
+}
+
+.about_author {
+    font-size: 200%;
+    color: #c18f59;
+    padding: 40px;
+    text-align: center;
+    letter-spacing: 5px
+    
+}
+
+.profile_author {
+    
+    background-image: linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.1)), url(/paper-old_background.jpg);
+    display: flex;
+    padding: 100px;
+    border-bottom: 5px solid #c18f59;
+    letter-spacing: 2px;
+    
+}
+
+
+
+.profile_author img {
+    transition: transform 0.3s ease;
+    /* ทำให้มีแอนิเมชั่นเล็กๆ */
+    padding: 10px;
+    max-width: 20%;
+    /* ลดขนาดภาพ*/
+    max-height: 10%;
+    object-fit: cover;
+    /*ย่อภาพโดยไม่โดนบีบอัด */
+
+}
+
+.profile_author p {
+    padding: 50px;
+    font-size: 35px;
+}
+
+
+.profile_author img:hover {
+    transform: scale(1.2);
+    box-shadow: 0 3rem 3rem rgba(0, 0.3, 0, 0.3);
+
+}
+
+.profile_author strong {
+    padding: 5%;
+    color: black;
+    font-size: 2cm;
+    transition: all 0.2s;
+
+}
+
+.btn_author {
+    display: inline-block;
+    border-radius: 4px;
+    background-color: #c18f59;
+    border: none;
+    color: #ffff;
+    font-size: 20px;
+    padding: 6px;
+    width: 150px;
+    transition: all 0.5s;
+    cursor: pointer;
+    margin: 5px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    /* เพิ่มเงา */
+    border: 2px solid #c18f59;
+    /* เพิ่มขอบ */
+
+}
+
+.btn_author span {
+    cursor: pointer;
+    display: inline-block;
+    /* ลบเส้น link ออก */
+    position: relative;
+    transition: 0.5s;
+
+}
+
+.btn_author span:after {
+    content: '\00bb';
+    position: absolute;
+    opacity: 0;
+    top: 0;
+    right: -20px;
+    transition: 0.4s;
+}
+
+
+.btn_author:hover span {
+    padding-right: 20px;
+    transform: translateX(-3px);
+}
+
+.btn_author span:after {
+    opacity: 2;
+    right: 2;
+
+}
+
+.performance_author {
+    font-size: 200%;
+    color: #c18f59;
+    padding: 40px;
+    text-align: center;
+    letter-spacing: 2px;
+}
+
+.performance_author_edit {
+    font-size: 200%;
+    color: #c18f59;
+    padding: 40px;
+    text-align: center;
+    letter-spacing: 2px;
+}
+
+/* ส่วนข้อความ อ่านเพิ่มเติม */
+section {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    /* แทน cloume */
+    border-bottom: 5px solid #c18f59;
+    letter-spacing: 2px;
+    background-image: url(/prince-wallpapers.jpg);
+}
+
+section div {
+    text-align: center;
+    padding: 30px;
+}
+
+section image {
+    width: 20%;
+}
+
+.section_book p {
+    padding: 5px;
+    font-size: 15px;
+    text-align: left;
+}
+
+.section_book img {
+    transition: transform 0.3s ease;
+    /* ทำให้มีแอนิเมชั่นเล็กๆ */
+}
+
+.section_book img:hover {
+    transform: scale(1.15);
+    box-shadow: 0 3rem 3rem rgba(0, 0.3, 0, 0.3);
+    transition: 0.2s;
+}
+
+.book_text {
+    padding: 10px;
+}
+
+/* เริ่มทำให้สามารถกดอ่านเพิ่มเติมเเล้วมีตัวหนังสือเด้งลงมาต้องทำเป็นch1 ch2ch3เพราะว่าเดี๋ยวมันทำงานรวมกันมั่วเเเล้วเวลากดมันจะเด้งลงมาพร้อมกัน */
+
+#ch {
+    display: none;
+}
+
+#ch:checked~.content {
+    display: block;
+}
+
+#ch:checked~label {
+    display: none;
+}
+
+.content {
+    display: none;
+}
+
+label {
+    display: inline-block;
+    cursor: pointer;
+    color: #ffff;
+    background-color: #c18f59;
+    padding: 3px 13px;
+    border-radius: 3px;
+    margin-top: 12px;
+
+}
+
+
+#ch2 {
+    display: none;
+}
+
+#ch2:checked~.content2 {
+    display: block;
+}
+
+#ch2:checked~label {
+    display: none;
+}
+
+.content2 {
+    display: none;
+}
+
+
+#ch3 {
+    display: none;
+}
+
+#ch3:checked~.content3 {
+    display: block;
+}
+
+#ch3:checked~label {
+    display: none;
+}
+
+.content3 {
+    display: none;
+}
+
+
+#ch4 {
+    display: none;
+}
+
+#ch4:checked~.content4 {
+    display: block;
+}
+
+#ch4:checked~label {
+    display: none;
+}
+
+.content4 {
+    display: none;
+}
+
+label:hover {
+    transform: translateY(-5px);
+    transition: transform 0.3s ease;
+}
+
+/* จบการทำให้ตัวหนังสือลงมา */
+main {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    /* แทน cloume */
+    text-align: center;
+
+}
+
+main img {
+    transition: transform 0.3s ease;
+}
+
+main img:hover {
+    transform: scale(1.15);
+    box-shadow: 0 3rem 3rem rgba(0, 0.3, 0, 0.3);
+    transition: 0.2s;
+
+}
+
+main div {
+    padding: 10px;
+}
+
+.main_text {
+    padding: 10px;
+}
+
+main img {
+
+    max-width: 70%;
+    /* 100% ทำให้มันไม่เกินกล่อง */
+}
+
+/* End รูปผลงานที่ถูกดดดเเปลงจากนวนิยายทำให้เด้งได้ */
+
+/* Start ส่วน Footer */
+footer {
+    background-color: #c18f59;
+    color: azure;
+    padding: 90px;
+
+}
+
+
+footer .form-group_name [type=text] {
+    width: 100%;
+    height: 50px;
+    padding: 12px 20px;
+    box-sizing: border-box;
+    border: 2px solid #ccc;
+    border-radius: 4px;
+    background-color: #f8f8f8;
+    resize: none;
+}
+
+footer .form-group_comment [type=text] {
+    width: 100%;
+    height: 50px;
+    padding: 12px 20px;
+    box-sizing: border-box;
+    border: 2px solid #ccc;
+    border-radius: 4px;
+    background-color: #f8f8f8;
+    resize: none;
+}
+
+
+.footer_text h1 {
+    font-size: 35px;
+    letter-spacing: 2px;
+}
+
+footer .form-group_name [for=name] {
+    font-size: 30px;
+}
+
+
+footer .form-group_comment [for=detail] {
+    font-size: 30px;
+
+}
+
+
+/* End ส่วน Footer */
+
+button.btn-success {
+    font-size: 20px;
+    background-color: rgb(127, 220, 114);
+    color: rgb(0, 0, 0);
+    padding: 10px 20px;
+    transition-duration: 0.4s;
+}
+
+button.btn-success:hover {
+background-color: #ffff; 
+  color: black;
+}
